@@ -85,7 +85,7 @@ def on_mouse_down(pos, button):
 
     if game_state == "MENU":
         if button == mouse.LEFT:
-            #Clicar no botão de iniciar
+            # Clicar no botão de iniciar
             if btn_start.collidepoint(pos):
                 game_state = "PLAYING"
                 for en in enemies:
@@ -193,7 +193,7 @@ def draw():
     screen.draw.line((mx - 10, my), (mx + 10, my), "red")
     screen.draw.line((mx, my - 10), (mx, my + 10), "red")
 
-def on_key_down(key): # Criando uma atualização para a tela, quando o botão do espaço for curado então vai aparecer o Voce apertou espaco
+def on_key_down(key):
     global message_fire, game_state, player, start_message
 
     if key == keys.R and game_state == 'GAME OVER':
@@ -275,7 +275,7 @@ def update_enemies():
 
         enemy["anim_counter"] += 1
 
-        if enemy["anim_counter"] > 10: # Troca de animação altara caso queira que fique mais rapido
+        if enemy["anim_counter"] > 10: # Troca de animação, altere caso queira que fique mais rapida
             enemy["anim_counter"] = 0
 
             if enemy["frame"] == 1:
@@ -313,4 +313,5 @@ def update_bullet():
 import pgzrun
 music.play("music_game")
 music.set_volume(0.1)
+
 pgzrun.go()
